@@ -33,3 +33,6 @@ while(sero>=0):
     turtle.goto(start_x,start_y)
     start_y -=100
     turtle.penup()
+
+
+turtle.exitonclick()
