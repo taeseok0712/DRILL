@@ -36,3 +36,6 @@ while(sero>=0):
 
 
 turtle.exitonclick()
+
+
+#drill 4완성
