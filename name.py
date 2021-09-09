@@ -117,3 +117,5 @@ turtle.forward(100)
 turtle.right(90)
 turtle.forward(70)
 turtle.exitonclick()
+
+#drill3 완성
