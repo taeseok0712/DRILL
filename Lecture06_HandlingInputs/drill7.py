@@ -14,10 +14,10 @@ def handle_events():
             mouse_x, mouse_y = events.x, 600 - 1 - events.y
             if(mouse_x > 400):
                 dir = 1
-                ani = 1
+
             elif (mouse_x <= 400):
                 dir = 1
-                ani = 0
+
 
             elif events.key == SDLK_ESCAPE:
                 running= False;
@@ -50,8 +50,10 @@ while running:
     handle_events()
     frame = (frame + 1) % 8
     if (x<mouse_x):
+        ani =1
         x += dir*5
     elif (x >= mouse_x):
+        ani = 0
         x -= dir * 5
     if (y < mouse_y):
             y += dir * 5
