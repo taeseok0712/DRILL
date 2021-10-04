@@ -42,17 +42,21 @@ hide_cursor()
 while running:
     clear_canvas()
     grass.draw(400, 30)
-    character.clip_draw(frame * 100, 100 * ani, 100, 100, x, 90)
+    character.clip_draw(frame * 100, 100 * ani, 100, 100, x, y)
     mouse.clip_draw(0, 0, 50, 52, mouse_x, mouse_y)
 
     update_canvas()
 
     handle_events()
     frame = (frame + 1) % 8
-    if(x<mouse_x):
+    if (x<mouse_x):
         x += dir*5
     elif (x >= mouse_x):
         x -= dir * 5
+    if (y < mouse_y):
+            y += dir * 5
+    elif (y >= mouse_y):
+            y -= dir * 5
     delay(0.01)
 
 close_canvas()
