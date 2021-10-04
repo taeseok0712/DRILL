@@ -7,6 +7,7 @@ open_canvas()
 grass =load_image('grass.png')
 character=load_image('character.png')
 
+
 PosX =400
 PosY =90
 angle =0;
@@ -23,14 +24,14 @@ while True:
             delay(0.01)
             if(PosX==400):
                 switch =False
-      
+
         elif PosX== 750 and PosY<600 and PosY >=90:
             clear_canvas_now()
             grass.draw_now(400,30)
             character.draw_now(PosX,PosY)
             PosY+=5
             delay(0.01)
-    
+
         elif PosY== 600 and PosX>0 and PosX<=750:
             clear_canvas_now()
             grass.draw_now(400,30)
@@ -52,8 +53,3 @@ while True:
             if(angle==360):
                 switch =True
                 angle =0
-
-
-   
-
-
