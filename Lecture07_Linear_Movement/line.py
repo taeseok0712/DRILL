@@ -79,5 +79,3 @@ prepare_turtle_canvas()
 draw_para((100,100),(500,500))
 
 turtle.done()
-
-
