@@ -51,8 +51,8 @@ def draw_point(p):
 
 
 def draw_para(p1, p2):
-    a = 200
-    b = 50
+    a = 150
+    b = 100
 
     for i in range(0, 360 + 1, 2):
 
