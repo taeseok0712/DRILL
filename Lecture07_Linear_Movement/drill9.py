@@ -1,13 +1,3 @@
-import random
-import pico2d
-
-KPU_WIDTH, KPU_HEIGHT = 1280, 1024
-pico2d.open_canvas(KPU_WIDTH, KPU_HEIGHT)
-
-background = pico2d.load_image('KPU_GROUND.png')
-character = pico2d.load_image('animation_sheet.png')
-pin_point = pico2d.load_image('pin_point.png')
-
 running = True
 
 goto_points = []
