@@ -93,8 +93,7 @@ class RunState:
 class DashState:
     def enter(boy, event):
 
-        if boy.velocity == -1:
-            boy.velocity = -3
+        if boy.velocity == -1:boy.velocity = -3
         elif boy.velocity == 1: boy.velocity = 3
 
         boy.timer = 1000
@@ -135,7 +134,6 @@ next_state_table = {
                  } ,
 
     DashState: {TIME_UP: RunState , SHIFT_UP: RunState,
-
                 RIGHT_UP: IdleState, LEFT_UP: IdleState,
                 RIGHT_DOWN: DashState, LEFT_DOWN: DashState
                 }
