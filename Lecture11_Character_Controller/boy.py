@@ -135,7 +135,7 @@ next_state_table = {
 
     DashState: {TIME_UP: RunState , SHIFT_UP: RunState,
                 RIGHT_UP: IdleState, LEFT_UP: IdleState,
-                RIGHT_DOWN: DashState, LEFT_DOWN: DashState
+                RIGHT_DOWN: IdleState, LEFT_DOWN: IdleState
                 }
 
 
