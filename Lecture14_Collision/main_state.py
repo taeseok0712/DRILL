@@ -10,18 +10,50 @@ from boy import Boy
 from grass import Grass
 from ball import Ball
 
-
 name = "MainState"
 
 boy = None
 grass = None
 bird = None
+balls = []
+big_balls = []
+
+
+def collide(a, b):
+    # fill here
+    return True
+
+
+
+
 def enter():
-    global boy, grass
+    global boy
     boy = Boy()
+    game_world.add_object(boy, 1)
+
+    global grass
     grass = Grass()
     game_world.add_object(grass, 0)
-    game_world.add_object(boy, 1)
+
+    global bird
+    bird = Bird()
+    game_world.add_object(bird, 1)
+    global bird1
+    bird1 = Bird()
+    game_world.add_object(bird1, 1)
+    global bird2
+    bird2 = Bird()
+    game_world.add_object(bird2, 1)
+    global bird3
+    bird3 = Bird()
+    game_world.add_object(bird3, 1)
+    global bird4
+    bird4 = Bird()
+    game_world.add_object(bird4, 1)
+    # fill here for balls
+
+
+
 
 
 def exit():
@@ -50,13 +82,15 @@ def update():
     for game_object in game_world.all_objects():
         game_object.update()
 
+    # fill here for collision check
+
+
 
 def draw():
     clear_canvas()
     for game_object in game_world.all_objects():
         game_object.draw()
     update_canvas()
-
 
 
 
