@@ -40,10 +40,11 @@ class Bird:
     def update(self):
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 14
         self.velocity += RUN_SPEED_PPS
+        print(self.velocity)
         if self.cnt %2 ==0:
-            self.x += self.velocity * game_framework.frame_time
+            self.x += RUN_SPEED_PPS * game_framework.frame_time
         if self.cnt % 2 == 1:
-            self.x -= self.velocity * game_framework.frame_time
+            self.x -= RUN_SPEED_PPS * game_framework.frame_time
         self.x = clamp(25, self.x, 1600 - 25)
         if self.x == 1600 - 25:
             self.cnt += +1
