@@ -47,6 +47,9 @@ class Bird:
         self.dir = clamp(-1, self.velocity, 1)
 
 
+
+
+
     def draw(self):
         if self.velocity == 1:
             self.image.clip_draw(int(self.frame) * 100, 100, 500, 100, self.x, self.y ,33 ,33)
