@@ -39,7 +39,7 @@ def handle_events():
 
 open_canvas()
 
-team = [Boy() for i in range(1000)]
+team = [Boy() for i in range(100)]
 
 
 grass = Grass()

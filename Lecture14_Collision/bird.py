@@ -62,6 +62,3 @@ class Bird:
             self.image.clip_draw(int(self.frame) * 100, 100, 500, 100, self.x, self.y ,33 ,33)
         else:
             self.image.clip_draw(int(self.frame) * 100, 0, 100, 100, self.x, self.y,33,33)
-
-
-

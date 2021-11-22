@@ -5,16 +5,18 @@ from ball import Ball
 import game_world
 
 # Boy Run Speed
-PIXEL_PER_METER = (10.0 / 0.3)  # 10 pixel 30 cm
-RUN_SPEED_KMPH = 20.0  # Km / Hour
-RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
-RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
-RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
+# fill expressions correctly
+PIXEL_PER_METER = 0
+RUN_SPEED_KMPH = 0
+RUN_SPEED_MPM = 0
+RUN_SPEED_MPS = 0
+RUN_SPEED_PPS = 0
 
 # Boy Action Speed
-TIME_PER_ACTION = 0.5
-ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
-FRAMES_PER_ACTION = 8
+# fill expressions correctly
+TIME_PER_ACTION = 0
+ACTION_PER_TIME = 0
+FRAMES_PER_ACTION = 0
 
 
 
@@ -66,24 +68,16 @@ class IdleState:
 class RunState:
 
     def enter(boy, event):
-        if event == RIGHT_DOWN:
-            boy.velocity += RUN_SPEED_PPS
-        elif event == LEFT_DOWN:
-            boy.velocity -= RUN_SPEED_PPS
-        elif event == RIGHT_UP:
-            boy.velocity -= RUN_SPEED_PPS
-        elif event == LEFT_UP:
-            boy.velocity += RUN_SPEED_PPS
-        boy.dir = clamp(-1, boy.velocity, 1)
+        # fill here
+        pass
 
     def exit(boy, event):
         if event == SPACE:
             boy.fire_ball()
 
     def do(boy):
-        #boy.frame = (boy.frame + 1) % 8
-        boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
-        boy.x += boy.velocity * game_framework.frame_time
+        # fill here
+        boy.frame = (boy.frame + 1) % 8
         boy.x = clamp(25, boy.x, 1600 - 25)
 
     def draw(boy):
@@ -127,7 +121,7 @@ class Boy:
         self.x, self.y = 1600 // 2, 90
         # Boy is only once created, so instance image loading is fine
         self.image = load_image('animation_sheet.png')
-        self.font = load_font('ENCR10B.TTF', 16)
+        # fill here
         self.dir = 1
         self.velocity = 0
         self.frame = 0
@@ -135,13 +129,9 @@ class Boy:
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
 
-    def get_bb(self):
-        # fill here
-        return 0, 0, 0, 0
-
 
     def fire_ball(self):
-        ball = Ball(self.x, self.y, self.dir * RUN_SPEED_PPS * 10)
+        ball = Ball(self.x, self.y, self.dir*3)
         game_world.add_object(ball, 1)
 
 
@@ -158,9 +148,7 @@ class Boy:
 
     def draw(self):
         self.cur_state.draw(self)
-        self.font.draw(self.x - 60, self.y + 50, '(Time: %3.2f)' % get_time(), (255, 255, 0))
-        #fill here
-
+        # fill here
 
     def handle_event(self, event):
         if (event.type, event.key) in key_event_table:

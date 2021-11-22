@@ -12,18 +12,38 @@ class Ball:
         self.x, self.y, self.fall_speed = random.randint(0, 1600-1), 60, 0
 
     def get_bb(self):
-        # fill here
-        return 0,0,0,0
+        return self.x - 10, self.y - 10, self.x + 10, self.y + 10
 
     def draw(self):
         self.image.draw(self.x, self.y)
+        draw_rectangle(*self.get_bb())
         # fill here for draw
+
+    def stop(self):
+        self.fall_speed = 0
 
     def update(self):
         self.y -= self.fall_speed * game_framework.frame_time
+        if(self.y < 60):
+            self.y = 60
+
 
     #fill here for def stop
 
 
 # fill here
 # class BigBall
+class Bigball(Ball):
+    MIN_FALL_SPEED = 50
+    MAX_FALL_SPEED = 200
+    image = None
+
+    def __init__(self):
+        if Bigball.image == None:
+            Bigball.image = load_image('ball41x41.png')
+        self.x, self.y = random.randint(0, 1600 - 1), 500
+        self.fall_speed = random.randint(Bigball.MIN_FALL_SPEED,
+                                         Bigball.MAX_FALL_SPEED)
+
+    def get_bb(self):
+        return self.x - 20, self.y - 20, self.x + 20, self.y + 20
